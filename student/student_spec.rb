@@ -12,4 +12,14 @@ RSpec.describe Student do
     it { respond_to(:fullname) }
     
   end
+
+  describe "total number of students created" do
+    it "should have two students in total" do
+      Student.new("John", "Doe")
+      Student.new("Jane", "Doe")
+
+      expect(Student.total_count).to eq(2)
+    end
+  end
+
 end
